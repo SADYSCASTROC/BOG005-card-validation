@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --header-color: linear-gradient(#def783,#adf3b3,#a7c395);
+    --footer-color: rgb(193, 220, 180);
+
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    background: var(--header-color);
+    height: 150px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+h1{
+    padding:20px;
+    font-size: 50px;
+}
+.carrito-compras{
+}
+.navegacion{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+li{
+    list-style: none;
+    font-size: 20px;
+}
+.espacio{
+    height: 30px;
+    margin-top: 10px;
+    background: var(--header-color);
+}
+.produto{
+    border: 1px solid rgb(38, 39, 40);
+}
+.productos-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.produto img{
+    width: 200px;
+}
+.produto{
+    margin-top: 30px;
+    text-align: center;
+    height: 250px;
+    margin: 25px;
+}
+.produto:hover{
+    box-shadow: 0px 10px 10px rgb(139, 136, 136);}
+.pie-pagina{
+    margin-top: 50px;
+    height: 250px;
+    background-color: var(--footer-color);
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+footer > div{
+    margin-top: 50px;
+}
+
+/* tarjeta de credito*/
+.car{
+    height: 600px;
+    margin-top: 10px;
+    background-color: rgb(209, 199, 220);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta{
+    height: 200px;
+    width: 30%;
+    border-radius: 10px;
+    background: radial-gradient(#f3c9cc, #f56a73);    z-index: 1;
+    
+
+}
+.campos-de-informacion{
+    height: 280px;
+    width: 35%;
+    background-color: rgb(244, 247, 250);
+    border-radius: 20px;
+    position: relative;
+    bottom: 80px;
+    
+}
+.tarjeta >img{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
