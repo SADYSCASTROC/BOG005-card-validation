@@ -72,7 +72,7 @@ footer > div{
 .car{
     height: 600px;
     margin-top: 10px;
-    background-color: rgb(209, 199, 220);
+    background-color: rgb(180, 179, 182);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,12 +83,34 @@ footer > div{
     height: 200px;
     width: 30%;
     border-radius: 10px;
-    background: radial-gradient(#f3c9cc, #f56a73);    z-index: 1;
-    
-
+    z-index: 1;
 }
-.campos-de-informacion{
+.imagen-tarjeta{
     height: 280px;
+    width: 130%;
+    position: relative;
+    bottom: 35px;
+    right: 60px;
+}
+.inf{
+    position: relative;
+    bottom: 210px;
+    width: 70%;
+}
+  .nombre{
+
+    margin-left: 50px;
+
+  }
+ .numero{
+    margin: 30px;
+    margin-right: 10px;
+ }
+
+
+
+.campos-de-informacion{
+    height: 350px;
     width: 35%;
     background-color: rgb(244, 247, 250);
     border-radius: 20px;
@@ -96,8 +118,27 @@ footer > div{
     bottom: 80px;
     
 }
-.tarjeta >img{
-    margin-left: 30px;
-    margin-top: 30px;
+
+.campos-de-informacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+input {
+    width: 70%;
+    height: 25px;
+}
+.label1{
+    margin-top: 30px;
+    font-size: 20px;
+
+}
+.label2{
+    font-size: 20px;
+    margin-top: 30px;
+}
+#boton{
+    margin-top: 15px;
+}

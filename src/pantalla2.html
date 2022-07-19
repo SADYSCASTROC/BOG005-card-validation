@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tarjeta</title>
     <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
@@ -12,16 +12,30 @@
      <!--TArjeta de credito-->
    <div class="car">
     <div class="tarjeta">
-     <img src="/img/chip-tarjeta (1).png" alt="" height="80px">
-    </div>
-    
-    <div class="campos-de-informacion">
-        <label for="">Numero</label>
-        <input type="text" name="" id="">
+      <img src="/img/tarjeta-result (1).png" alt="" class="imagen-tarjeta">
+      <div class="inf">
+        <div class="numero" id="showNumber"></div>
+        <div class="nombre"></div>
+       </div>
+      
+     </div>
+     
+    <form class="campos-de-informacion" class="formulario">
+        <label for="numIngresado" class="label1">Numero
+        <input type="number" name="numero" id="numIngresado" placeholder="Ingrese el numero de la tarjeta" >
+      </label>
+        <label for="nombre" class="label2">Nombre
+        <input type="text" name="nombre" id="nombre-usuario" placeholder="Ingrese su nombre">
+      </label>
 
-    </div>
+      <button id="botonValidation">Validar pago</button>
+
+    </form>
+
+
   </div>
- 
+  <script src="/src/index.js" type="module"></script>
+<script src="/src/validator.js"></script>
     
 </body>
 </html>
