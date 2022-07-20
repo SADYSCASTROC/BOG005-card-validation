@@ -2,13 +2,13 @@ const validator = {
  
 
      validateNum(num){
-        booleano = false
-        if(num>=0){
-            booleano= false
+        booleanooo = false
+        if(parseInt(num)>=0){
+            booleanooo= false
         }else{
-            booleano= true
+            booleanooo= true
         }
-        return booleano
+        return booleanooo
     }
 
 };
