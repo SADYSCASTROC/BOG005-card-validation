@@ -11,51 +11,37 @@ let nameGlobal;
 
 
 num.addEventListener("keyup", function(){
-  
-  numIngresadoGlobal= document.getElementById("showNumber").innerHTML=this.value;
+  numIngresadoGlobal=this.value;
+  validator.mostrarNumCardDom(numIngresadoGlobal)
+
 });
 nombre.addEventListener("keyup", function(){
       nameGlobal= document.getElementById("name").innerHTML=this.value.toUpperCase();
 });
 
-
-
 let boton = document.getElementById("botonValidation");
 boton.onclick = function() {
-
-     // if(validator.validateNum(numIngresadoGlobal)){
-            numeroDigitosSeparados()
-     // }else{
-     //       alert("tiene un error")
-     // }
-
+  validator.animacion("Validando datos","info")
+  numeroDigitosSeparados()
 }
 
 function numeroDigitosSeparados(){
-     //alert("excelente")
-
 let digits
 let digitos
       digits = numIngresadoGlobal.toString().split('');
       digitos = digits.map(Number)
            console.log(digitos);
 
-           validacion(digitos)
+    validacion(digitos)
 }
 
 function validacion(numeroTarjeta){
-
-
 let obtenerNumeroReversa=[]
             let reversa= numeroTarjeta.reverse();
          
-            console.log(reversa)
                reversa.map((index) => {
                  obtenerNumeroReversa.push(index)
                 })
-                console.log(obtenerNumeroReversa)
-         
-                
                   let suma=0
                 for(let i=0; i<obtenerNumeroReversa.length; i++){ 
                    let numero=obtenerNumeroReversa[i]
@@ -68,41 +54,17 @@ let obtenerNumeroReversa=[]
                        }
                      }
                    suma += numero
-         
+
                 }
                 if((suma % 10) ==0){
-
-                  document.getElementById("responseValidate").innerHTML="Numero de tarjeta valido";
+                  validator.numeroCardValida("responseValidate","Numero de tarjeta valido")
                 }else{
-
-                   document.getElementById("responseValidate").innerHTML="Numero de tarjeta no valido";
-
+                  validator.numeroCardValida("responseValidate","Numero de tarjeta no valido")
                 }
          }
+
+         
            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -125,21 +87,15 @@ let arrayProductos=[
   {id:14,Nombre:"Uvas Roja", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXY87s7NaBArzjSxnGHyDw8C0cbtaaMPWqZA&usqp=CAU"},
   {id:15,Nombre:"Fresas", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_caL_IY_wPjRT-yakrC1slTidJqyPN1Xy4Q&usqp=CAU"},
   {id:16,Nombre:"Cereza", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUr02L1S-bnJ17fkKuHt_KF9MXCnehAZhkSA&usqp=CAU"},
-
-
 ]
 
-
 let carrito=[];
-
 // ForEach para recorrer el array de productos
 // creamos un div para mostrar los objetos en el html
 arrayProductos.forEach((producto) =>{
-
   const div=document.createElement("div")
   div.classList.add("produto")
   div.innerHTML=`
-    
     
     <img src=${producto.img} alt=">
     <h2 style="color:red">${producto.Nombre}</h2>
@@ -161,18 +117,15 @@ arrayProductos.forEach((producto) =>{
   }  
   
 })
-document.getElementById("pantallados").style.display = "none";
 
-
-
+validator.ocultarPantallados()
 
 function agregarCarritoCompra(producto){
-  
   //almacenamos los productos en el array del carrito
   if(carrito.length==0){
    carrito.push(producto)
    document.getElementById("numProducto").innerHTML=carrito.length;
-   alert("Producto Agregado correctamente")
+   validator.animacion("Producto agregado correctamente","success")
    mostrarDetalle()
 
   }else{
@@ -182,15 +135,14 @@ function agregarCarritoCompra(producto){
         aux=1
       }
      })
-
      //si encontro el producto que ya estaba en el carrito
      if(aux==1){
-        alert("El producto ya estaba agregado")
-     }else{
-      alert("Producto Agregado correctamente")
+      validator.animacion("El producto ya estaba agregado","warning")
 
+     }else{
+      validator.animacion("Producto agregado correctamente","success")
       carrito.push(producto)
-      document.getElementById("numProducto").innerHTML=carrito.length;   
+      validator.contadorCarrito(carrito.length)
       mostrarDetalle()
      }
   }
@@ -198,34 +150,12 @@ function agregarCarritoCompra(producto){
 
 
 
-function mostrarDetalle(){
-
-//   carrito.forEach((carr) =>{
-//     const div=document.createElement("div")
-//     div.classList.add("produto")
-//     div.innerHTML=`
-      
-      
-//       <img src=${carr.img} alt=">
-//       <h2 style="color:red">${carr.Nombre}</h2>
-//       <p>${carr.precio}</p>
-//       <h4>${carr.stock}</h4>
-  
-//       <p style="">
-//       <a href="#" id="${carr.id}">Agregar al Carrito</a>       </p>
-//     `
-  
-//     contenedorDetalleCarrito.appendChild(div)
-  
-// })
-
-}
+function mostrarDetalle(){}
 
 
 document.getElementById('validar').addEventListener('click',function(){
   document.getElementById("pantallauno").style.display = "none";
   document.getElementById("pantallados").style.display = "block";
-  
 
 })
          
