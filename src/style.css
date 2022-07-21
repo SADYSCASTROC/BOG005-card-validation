@@ -19,6 +19,12 @@
     box-shadow: 0px 10px 10px rgb(139, 136, 136);
 
 }
+.classlogo{
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: 0px 10px 10px rgb(139, 136, 136);
+
+}
 h1{
     padding:20px;
     font-size: 50px;
@@ -42,27 +48,33 @@ li{
     box-shadow: 0px 10px 10px rgb(139, 136, 136);
 
 }
-.produto{
-    border: 1px solid rgb(38, 39, 40);
-}
 .productos-container{
     display: flex;
     flex-wrap: wrap;
 }
 .produto img{
-    width: 200px;
+    width: 245px;
+    height: 130px;
 }
+
 .produto{
+    width: 250px;
     margin-top: 30px;
     text-align: center;
     height: 250px;
     margin: 25px;
+    border: 1px solid rgb(186, 190, 201);
+    margin-left: 100px;
+
+}
+.boton-agregar{
+    padding-top: 20px;
 }
 .produto:hover{
     box-shadow: 0px 10px 10px rgb(139, 136, 136);}
 .pie-pagina{
     margin-top: 50px;
-    height: 250px;
+    height: 200px;
     background-color: var(--footer-color);
     display: flex;
     justify-content: space-evenly;
@@ -143,6 +155,6 @@ input {
     font-size: 20px;
     margin-top: 30px;
 }
-#boton{
+#botonValidation{
     margin-top: 15px;
 }
