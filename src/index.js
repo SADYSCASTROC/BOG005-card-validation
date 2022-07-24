@@ -1,74 +1,61 @@
 import validator from './validator.js';
 
-
-//validaion del numero de tarjeta de credito
-
-let num = document.getElementById('numIngresado'); 
+let inputValue = document.getElementById("numIngresado"); 
 let nombre = document.getElementById('nombre-usuario'); 
-let numIngresadoGlobal;
-let nameGlobal;
 
 
+inputValue.addEventListener("keyup", function(){
 
-num.addEventListener("keyup", function(){
-  numIngresadoGlobal=this.value;
-  validator.mostrarNumCardDom(numIngresadoGlobal)
+  var maskifyString= validator.maskify(this.value)
+  document.getElementById("showNumber").innerHTML = maskifyString;
+
 
 });
-nombre.addEventListener("keyup", function(){
-      nameGlobal= document.getElementById("name").innerHTML=this.value.toUpperCase();
-});
 
-let boton = document.getElementById("botonValidation");
-boton.onclick = function() {
-  validator.animacion("Validando datos","info")
-  numeroDigitosSeparados()
-}
+let button = document.getElementById("botonValidation"); // Encuentra el elemento "button" en el sitio
+button.onclick = validacion; // Agrega función onclick al elemento
+  function validacion() {
+  
+    if(validator.isValid(parseInt(inputValue.value))){
+      animacion("su pago ha sido exitoso", "success")
 
-function numeroDigitosSeparados(){
-let digits
-let digitos
-      digits = numIngresadoGlobal.toString().split('');
-      digitos = digits.map(Number)
-           console.log(digitos);
-
-    validacion(digitos)
-}
-
-function validacion(numeroTarjeta){
-let obtenerNumeroReversa=[]
-            let reversa= numeroTarjeta.reverse();
-         
-               reversa.map((index) => {
-                 obtenerNumeroReversa.push(index)
-                })
-                  let suma=0
-                for(let i=0; i<obtenerNumeroReversa.length; i++){ 
-                   let numero=obtenerNumeroReversa[i]
-         
-                     if((i %2) !== 0){
-                      numero *= 2;
-         
-                       if(numero > 9){
-                         numero -= 9
-                       }
-                     }
-                   suma += numero
-
-                }
-                if((suma % 10) ==0){
-                  validator.numeroCardValida("responseValidate","Numero de tarjeta valido")
-                }else{
-                  validator.numeroCardValida("responseValidate","Numero de tarjeta no valido")
-                }
-         }
-
-         
-           
+    }else{
+      animacion("numero de tarjeta invalido", "error")
+    }
+  }
 
 
 
-         // Array de objetos para guardar los productos
+
+  function animacion(title,icono){
+    Swal.fire({
+      title: 'Sus datos se estan validando',
+      text: "cargando...",
+      icon: 'warning',
+      showCancelButton: false,
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          title,
+          '',
+          icono
+        )
+      }else{
+        Swal.fire(
+          "Error",
+          'Por favor debe aceptar para validar sus datos',
+          'error'
+        )
+      }
+    })
+  }
+
+
+  //Ocultar pantalla dos
+  document.getElementById("pantallados").style.display = "none";
+
 const contenedorDeProductos=document.getElementById("contenedor-productos")
 
 let arrayProductos=[
@@ -78,17 +65,7 @@ let arrayProductos=[
   {id:5,Nombre:"Mandarina", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGQ4LVosuQanTYnNxMsi6hnZUBWJbGyzvGgQ&usqp=CAU"},
   {id:6,Nombre:"Limon", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVCkITpyi6lRIRHQkywklp6Nbj-dtIefpwmA&usqp=CAU"},
   {id:7,Nombre:"Manzana Verde", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBVDhuerioKNGJW3lYQ5Tl5OtknXWNjTYorz2hmOitXleJoOMHEe6uMuB3UrIujqZd7ac&usqp=CAU"},
-  {id:8,Nombre:"Pomelo", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREMekNZrVqLzw-POqGIg7jWu_TYt4BTecjSw&usqp=CAU"},
-  {id:9,Nombre:"Mango", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu0LSeAMhoiWRDcuqzpMAIojyfixhsjiX0jg&usqp=CAU"},
-  {id:10,Nombre:"Ciruela", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT69FhSXEE2pbTrLxxQVnqUaJXiiRajK0yrzw&usqp=CAU"},
-  {id:11,Nombre:"Uvas Verdes", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYKbulP_OqWh5aO-QsvG1TeRx9zU8WlAF9w&usqp=CAU"},
-  {id:12,Nombre:"Sandia", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTotjroMOF7xB9Y38DDn2a7IxB7iMkXB8hHjA&usqp=CAU"},
-  {id:13,Nombre:"Manzana", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKllhEYE_0gHUmzlLaDtPsFpjM9A642BOWSg&usqp=CAU"},
-  {id:14,Nombre:"Uvas Roja", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXY87s7NaBArzjSxnGHyDw8C0cbtaaMPWqZA&usqp=CAU"},
-  {id:15,Nombre:"Fresas", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_caL_IY_wPjRT-yakrC1slTidJqyPN1Xy4Q&usqp=CAU"},
-  {id:16,Nombre:"Cereza", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUr02L1S-bnJ17fkKuHt_KF9MXCnehAZhkSA&usqp=CAU"},
 ]
-
 let carrito=[];
 // ForEach para recorrer el array de productos
 // creamos un div para mostrar los objetos en el html
@@ -118,15 +95,13 @@ arrayProductos.forEach((producto) =>{
   
 })
 
-validator.ocultarPantallados()
-
 function agregarCarritoCompra(producto){
   //almacenamos los productos en el array del carrito
   if(carrito.length==0){
    carrito.push(producto)
    document.getElementById("numProducto").innerHTML=carrito.length;
-   validator.animacion("Producto agregado correctamente","success")
-   mostrarDetalle()
+   mostrarDetalle();
+   animacioCarrito("Producto agragado correctamente","success");
 
   }else{
     var aux=0;
@@ -137,17 +112,16 @@ function agregarCarritoCompra(producto){
      })
      //si encontro el producto que ya estaba en el carrito
      if(aux==1){
-      validator.animacion("El producto ya estaba agregado","warning")
-
-     }else{
-      validator.animacion("Producto agregado correctamente","success")
+      animacioCarrito("Producto Ya esta agregado","warning");
+    }else{
+      animacioCarrito("Producto agragado correctamente","success");
       carrito.push(producto)
-      validator.contadorCarrito(carrito.length)
+      document.getElementById("numProducto").innerHTML=carrito.length;
+
       mostrarDetalle()
      }
   }
 }
-
 
 
 function mostrarDetalle(){}
@@ -157,12 +131,27 @@ document.getElementById('validar').addEventListener('click',function(){
   document.getElementById("pantallauno").style.display = "none";
   document.getElementById("pantallados").style.display = "block";
 
+
 })
+
+function animacioCarrito(titulo,icono){
+  Swal.fire({
+    position: 'top-end',
+    icon: icono,
+    title: titulo,
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+           
+
+
+
+
+
          
 
-      
 
-   
 
 
    
