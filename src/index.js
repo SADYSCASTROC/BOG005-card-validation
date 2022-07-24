@@ -1,7 +1,7 @@
 import validator from './validator.js';
 
 let inputValue = document.getElementById("numIngresado"); 
-let nombre = document.getElementById('nombre-usuario'); 
+//let nombre = document.getElementById('nombre-usuario'); 
 
 
 inputValue.addEventListener("keyup", function(){
@@ -17,42 +17,17 @@ button.onclick = validacion; // Agrega función onclick al elemento
   function validacion() {
   
     if(validator.isValid(parseInt(inputValue.value))){
-      animacion("su pago ha sido exitoso", "success")
+      alert("su pago ha sido exitoso")
 
     }else{
-      animacion("numero de tarjeta invalido", "error")
+      alert("numero de tarjeta invalido")
     }
   }
 
 
 
 
-  function animacion(title,icono){
-    Swal.fire({
-      title: 'Sus datos se estan validando',
-      text: "cargando...",
-      icon: 'warning',
-      showCancelButton: false,
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'Aceptar'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          title,
-          '',
-          icono
-        )
-      }else{
-        Swal.fire(
-          "Error",
-          'Por favor debe aceptar para validar sus datos',
-          'error'
-        )
-      }
-    })
-  }
-
-
+  
   //Ocultar pantalla dos
   document.getElementById("pantallados").style.display = "none";
 
@@ -101,7 +76,7 @@ function agregarCarritoCompra(producto){
    carrito.push(producto)
    document.getElementById("numProducto").innerHTML=carrito.length;
    mostrarDetalle();
-   animacioCarrito("Producto agragado correctamente","success");
+   alert("Producto agragado correctamente");
 
   }else{
     var aux=0;
@@ -112,9 +87,9 @@ function agregarCarritoCompra(producto){
      })
      //si encontro el producto que ya estaba en el carrito
      if(aux==1){
-      animacioCarrito("Producto Ya esta agregado","warning");
+      alert("Producto Ya esta agregado");
     }else{
-      animacioCarrito("Producto agragado correctamente","success");
+      alert("Producto agragado correctamente");
       carrito.push(producto)
       document.getElementById("numProducto").innerHTML=carrito.length;
 
@@ -134,15 +109,7 @@ document.getElementById('validar').addEventListener('click',function(){
 
 })
 
-function animacioCarrito(titulo,icono){
-  Swal.fire({
-    position: 'center',
-    icon: icono,
-    title: titulo,
-    showConfirmButton: false,
-    timer: 1500
-  })
-}
+
            
 
 
