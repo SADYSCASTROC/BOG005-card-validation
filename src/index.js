@@ -1,14 +1,19 @@
 import validator from './validator.js';
 
 let inputValue = document.getElementById("numIngresado"); 
-//let nombre = document.getElementById('nombre-usuario'); 
+let nombre = document.getElementById('nombre-usuario');
+
 
 
 inputValue.addEventListener("keyup", function(){
 
   var maskifyString= validator.maskify(this.value)
   document.getElementById("showNumber").innerHTML = maskifyString;
+  
 
+});
+nombre.addEventListener("keyup", function(){
+  document.getElementById("name").innerHTML = this.value.toUpperCase();
 
 });
 
@@ -25,9 +30,6 @@ button.onclick = validacion; // Agrega función onclick al elemento
   }
 
 
-
-
-  
   //Ocultar pantalla dos
   document.getElementById("pantallados").style.display = "none";
 
@@ -103,6 +105,10 @@ function mostrarDetalle(){}
 
 
 document.getElementById('validar').addEventListener('click',function(){
+
+  if(carrito.length==0)
+  alert("no tiene producto agregado al carrito")
+  if(carrito.length>0)
   document.getElementById("pantallauno").style.display = "none";
   document.getElementById("pantallados").style.display = "block";
 
