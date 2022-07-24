@@ -136,7 +136,7 @@ document.getElementById('validar').addEventListener('click',function(){
 
 function animacioCarrito(titulo,icono){
   Swal.fire({
-    position: 'top-end',
+    position: 'center',
     icon: icono,
     title: titulo,
     showConfirmButton: false,
