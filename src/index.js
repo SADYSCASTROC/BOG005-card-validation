@@ -20,15 +20,23 @@ nombre.addEventListener("keyup", function(){
 let button = document.getElementById("botonValidation"); // Encuentra el elemento "button" en el sitio
 button.onclick = validacion; // Agrega función onclick al elemento
   function validacion() {
+
+   
   
-    if(validator.isValid(parseInt(inputValue.value))){
-      alert("su pago ha sido exitoso")
+        if(inputValue.value.length===16){
+          if(validator.isValid(parseInt(inputValue.value))){
+            alert("su pago ha sido exitoso")
 
-    }else{
-      alert("numero de tarjeta invalido")
-    }
+          }else{
+            alert("numero de tarjeta invalido")
+          } 
+          }else{
+            
+            alert(  "ingrese un numero valido")  
+          }
+  
+  
   }
-
 
   //Ocultar pantalla dos
   document.getElementById("pantallados").style.display = "none";
@@ -40,8 +48,13 @@ let arrayProductos=[
   {id:2,Nombre:"Naranja",  precio:"$"+23000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiz8pP867uT8j4tqLdWZxSAhh9otz9YvD74Q&usqp=CAU"},
   {id:4,Nombre:"Kiwi", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0A6Af7uuEzCmUYpLuc8eBKueG_vBjdiZvTw&usqp=CAU"},
   {id:5,Nombre:"Mandarina", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGQ4LVosuQanTYnNxMsi6hnZUBWJbGyzvGgQ&usqp=CAU"},
-  {id:6,Nombre:"Limon", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVCkITpyi6lRIRHQkywklp6Nbj-dtIefpwmA&usqp=CAU"},
+  {id:12,Nombre:"Sandia", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTotjroMOF7xB9Y38DDn2a7IxB7iMkXB8hHjA&usqp=CAU"},
   {id:7,Nombre:"Manzana Verde", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBVDhuerioKNGJW3lYQ5Tl5OtknXWNjTYorz2hmOitXleJoOMHEe6uMuB3UrIujqZd7ac&usqp=CAU"},
+  {id:14,Nombre:"Uvas Roja", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXY87s7NaBArzjSxnGHyDw8C0cbtaaMPWqZA&usqp=CAU"},
+  {id:15,Nombre:"Fresas", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_caL_IY_wPjRT-yakrC1slTidJqyPN1Xy4Q&usqp=CAU"},
+  {id:16,Nombre:"Cereza", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUr02L1S-bnJ17fkKuHt_KF9MXCnehAZhkSA&usqp=CAU"},
+  {id:16,Nombre:"Cereza", precio:"$"+9000,stock:"Stock:"+" "+2,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUr02L1S-bnJ17fkKuHt_KF9MXCnehAZhkSA&usqp=CAU"},
+
 ]
 let carrito=[];
 // ForEach para recorrer el array de productos
@@ -52,12 +65,12 @@ arrayProductos.forEach((producto) =>{
   div.innerHTML=`
     
     <img src=${producto.img} alt=">
-    <h2 style="color:red">${producto.Nombre}</h2>
+    <h2 style="color:"red">${producto.Nombre}</h2>
     <p>${(producto.precio)}</p>
     <h4>${producto.stock}</h4>
 
-    <p style="">
-    <a href="#" id="${producto.id}">Agregar al Carrito</a> 
+    <p style="    background-color: #a7c395; width:50%; margin: auto; border-radius: 10px;">
+    <a href="#" id="${producto.id}" style=" color:white;text-decoration: none;">Agregar al Carrito</a> 
     </p>
   `
   

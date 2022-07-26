@@ -10,7 +10,7 @@ function isValid (creditCardNumber){
       var digits = numIngresado.toString().split('');
       var  digitos =digits.map(Number)
         //console.log(digitos);
-
+       
       let numReversa=[]
    let reversa= digitos.reverse();
        reversa.map((index) => {
@@ -38,6 +38,7 @@ function isValid (creditCardNumber){
        }else{
         return false
        }
+      
 } 
 //isValid(parametro)
 //ocultar los numeros 

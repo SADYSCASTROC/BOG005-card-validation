@@ -24,23 +24,14 @@ par se les debe multiplicar por dos, si este número es mayor o igual a 10,
 debemos sumar los dígitos del resultado; el número a verificar será válido si
 la suma de sus dígitos finales es un múltiplo de 10.
 
-![gráfica de algoritmo de Luhn](https://www.101computing.net/wp/wp-content/uploads/Luhn-Algorithm.png)
+![gráfica de algoritmo de Luhn](/src/img/Captura%20de%20Pantalla%202022-07-25%20a%20la(s)%209.56.59%20a.%C2%A0m..png)
 
 ## 2. Resumen del proyecto
 
-En este proyecto tendrás que construir una aplicación web que le permita a un
-usuario validar el número de una tarjeta de crédito. Además, tendrás que
-implementar funcionalidad para ocultar todos los dígitos de una tarjeta menos
-los últimos cuatro.
-
-La temática es libre. Tú debes pensar en qué situaciones de la vida real se
-necesitaría validar una tarjeta de crédito y pensar en cómo debe ser esa
-experiencia de uso (qué pantallas, explicaciones, mensajes, colores, ¿marca?)
-etc.
-
-Trabajando de manera individual, aprenderás a construir una aplicación web que interactuará
-con lx usuarix final a través del navegador, utilizando HTML, CSS y JavaScript
-como tecnologías.
+Tienda virtual.
+Hay variedad de frutas, con nombres,precios.
+Un boton que agrega al carrito el producto, despues que el cliente elija sus productos
+da click al carrito y le dirije a la página donde se hara el pago de los productos elejidos. 
 
 ## 3. Objetivos de aprendizaje
 
@@ -48,25 +39,25 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### HTML
 
-- [ ] **Uso de HTML semántico**
+- [X] **Uso de HTML semántico**
 
   <details><summary>Links</summary><p>
 
-  * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/02-html5/02-semantic-html)
-  * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+  * [HTML semántico](/src/index.html)
+  * [Semantics - MDN Web Docs Glossary](/src/index.js)
 </p></details>
 
 ### CSS
 
-- [ ] **Uso de selectores de CSS**
+- [X] **Uso de selectores de CSS**
 
   <details><summary>Links</summary><p>
 
-  * [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/01-css/01-intro-css)
+  * [Intro a CSS](/src/style.css)
   * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
 </p></details>
 
-- [ ] **Modelo de caja (box model): borde, margen, padding**
+- [X] **Modelo de caja (box model): borde, margen, padding**
 
   <details><summary>Links</summary><p>
 
@@ -79,7 +70,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### Web APIs
 
-- [ ] **Uso de selectores del DOM**
+- [X] **Uso de selectores del DOM**
 
   <details><summary>Links</summary><p>
 
@@ -112,14 +103,14 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### JavaScript
 
-- [ ] **Tipos de datos primitivos**
+- [X] **Tipos de datos primitivos**
 
   <details><summary>Links</summary><p>
 
   * [Valores primitivos - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures#valores_primitivos)
 </p></details>
 
-- [ ] **Strings (cadenas de caracteres)**
+- [X] **Strings (cadenas de caracteres)**
 
   <details><summary>Links</summary><p>
 
@@ -127,7 +118,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [String — Cadena de caracteres - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String)
 </p></details>
 
-- [ ] **Variables (declaración, asignación, ámbito)**
+- [X] **Variables (declaración, asignación, ámbito)**
 
   <details><summary>Links</summary><p>
 
@@ -135,7 +126,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Variables](https://curriculum.laboratoria.la/es/topics/javascript/01-basics/02-variables)
 </p></details>
 
-- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
+- [X] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
 
   <details><summary>Links</summary><p>
 
@@ -143,7 +134,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
 </p></details>
 
-- [ ] **Uso de bucles/ciclos (while, for, for..of)**
+- [X] **Uso de bucles/ciclos (while, for, for..of)**
 
   <details><summary>Links</summary><p>
 
@@ -151,7 +142,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Bucles e iteración - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
 </p></details>
 
-- [ ] **Funciones (params, args, return)**
+- [X] **Funciones (params, args, return)**
 
   <details><summary>Links</summary><p>
 
@@ -161,7 +152,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
 </p></details>
 
-- [ ] **Pruebas unitarias (unit tests)**
+- [X] **Pruebas unitarias (unit tests)**
 
   <details><summary>Links</summary><p>
 
@@ -178,17 +169,17 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Uso de linter (ESLINT)**
 
-- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
+- [X] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
 
 ### Control de Versiones (Git y GitHub)
 
-- [ ] **Git: Instalación y configuración**
+- [x] **Git: Instalación y configuración**
 
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+- [x] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
 
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
+- [x] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
 
-- [ ] **GitHub: Despliegue con GitHub Pages**
+- [x] **GitHub: Despliegue con GitHub Pages**
 
   <details><summary>Links</summary><p>
 
@@ -197,11 +188,11 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### user-centricity
 
-- [ ] **Diseñar un producto o servicio poniendo a la usuaria en el centro**
+- [x] **Diseñar un producto o servicio poniendo a la usuaria en el centro**
 
 ### product-design
 
-- [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
+- [x] **Crear prototipos de alta fidelidad que incluyan interacciones**
 
 - [ ] **Seguir los principios básicos de diseño visual**
 
@@ -222,9 +213,9 @@ Usa solo caracteres numéricos (dígitos) en la tarjeta a validar [0-9].
 En el `README.md`, cuéntanos cómo pensaste en los usuarios y cuál fue tu proceso
 para definir el producto final a nivel de experiencia y de interfaz.
 
-* Quiénes son los principales usuarios de producto.
-* Cuáles son los objetivos de estos usuarios en relación con tu producto.
-* Cómo crees que el producto que estás creando está resolviendo sus problemas.
+* Todas las personas.
+* Facilidad de compra de productos.
+* Teniendo una interfaz facil de manejar para el cliente, y variedades de productos saludables.
 
 ### Interfaz de usuario (UI)
 
@@ -240,12 +231,12 @@ La interfaz debe permitir al usuario:
 
 Antes de iniciar a codear, debes entender el problema que quieres solucionar y
 cómo tu aplicación lo soluciona.
-
+   (/src/img/prototip_lapiz.jpeg)
 * Trabaja tu primer prototipo con papel y lápiz (blanco y negro).
 * Luego valida esta solución con una compañera (pedir feedback).
 * Toma lo aprendido al momento de validar tu primer prototipo y desarrolla un
   nuevo prototipo usando alguna herramienta para diseño de prototipos
-  ([Balsamiq](https://balsamiq.com/), [Figma](https://www.figma.com/),
+  ([Balsamiq](/src/img/prototip_lapiz.jpeg), [Figma](https://www.figma.com/),
   [Google Slides](https://www.google.com/intl/es/slides/about/), etc.)
 Estos puntos los presentarás en el `README.md`.
 
