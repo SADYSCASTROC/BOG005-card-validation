@@ -4,7 +4,6 @@ let inputValue = document.getElementById("numIngresado");
 let nombre = document.getElementById('nombre-usuario');
 
 
-
 inputValue.addEventListener("keyup", function(){
 
   var maskifyString= validator.maskify(this.value)
@@ -17,25 +16,32 @@ nombre.addEventListener("keyup", function(){
 
 });
 
+
 let button = document.getElementById("botonValidation"); // Encuentra el elemento "button" en el sitio
 button.onclick = validacion; // Agrega función onclick al elemento
   function validacion() {
+    let mensajevalidacion=" "
 
-   
-  
+
         if(inputValue.value.length===16){
           if(validator.isValid(parseInt(inputValue.value))){
-            alert("su pago ha sido exitoso")
+            document.getElementById("showNumber").innerHTML 
+ 
+            mensajevalidacion="Numero de tarjeta valido"
+            //alert("su pago ha sido exitoso")
 
           }else{
-            alert("numero de tarjeta invalido")
+            mensajevalidacion="Numero de tarjeta Invalido"
+
+            //alert("numero de tarjeta invalido")
           } 
           }else{
-            
-            alert(  "ingrese un numero valido")  
+            mensajevalidacion="Ingrese un Numero valido"
+
+            //alert("ingrese un numero valido")  
           }
   
-  
+          document.getElementById('mensaje').innerHTML = mensajevalidacion; 
   }
 
   //Ocultar pantalla dos
@@ -90,7 +96,6 @@ function agregarCarritoCompra(producto){
   if(carrito.length==0){
    carrito.push(producto)
    document.getElementById("numProducto").innerHTML=carrito.length;
-   mostrarDetalle();
    alert("Producto agragado correctamente");
 
   }else{
@@ -108,13 +113,11 @@ function agregarCarritoCompra(producto){
       carrito.push(producto)
       document.getElementById("numProducto").innerHTML=carrito.length;
 
-      mostrarDetalle()
      }
   }
 }
 
 
-function mostrarDetalle(){}
 
 
 document.getElementById('validar').addEventListener('click',function(){

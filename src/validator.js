@@ -5,11 +5,10 @@ const validator = {
 };
 
 function isValid (creditCardNumber){
-  var numIngresado =creditCardNumber;
+  let numIngresado = creditCardNumber;
       //declaramos un vector para guardar los digitos en reversa
-      var digits = numIngresado.toString().split('');
-      var  digitos =digits.map(Number)
-        //console.log(digitos);
+      let digits = numIngresado.toString().split('');
+      let  digitos =digits.map(Number)
        
       let numReversa=[]
    let reversa= digitos.reverse();
